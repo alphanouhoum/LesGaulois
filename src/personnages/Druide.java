@@ -20,7 +20,7 @@ public class Druide {
 	
 	public void preparerPotion() {
 		Random random = new Random();
-		forcePotion = random.nextInt(effetPotionMin,effetPotionMax);
+		forcePotion = random.nextnt(effetPotionMin);
 		if (forcePotion > 7) {
 			parler("J'ai réparé une super potion de force " + forcePotion);
 			
