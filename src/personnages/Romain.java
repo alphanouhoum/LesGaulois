@@ -4,6 +4,15 @@ public class Romain {
 	private String nom;
 	private int force;
 	
+	private boolean forceValide() {
+		boolean valide = true;
+		if (force < 0) {
+			valide = false;
+		}else {
+			return valide;
+		}
+	}  
+	
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -14,7 +23,7 @@ public class Romain {
 	}
 
 	public void parler(String texte) {
-		System.out.println(prendreParole() + " Â« " + texte + " Â»");
+		System.out.println(prendreParole() + "« " + texte + " »");
 	}
 	
 	private String prendreParole() {
@@ -25,7 +34,7 @@ public class Romain {
 		force -= forceCoup;
 		if (force > 0) {
 			
-			parler("AÃ¯e");
+			parler("Aie");
 			
 		}else {
 			parler("J'andonne...");
@@ -34,7 +43,7 @@ public class Romain {
 	}
 	
 	public static void main(String[] args) {
-		Romain obelix = new Romain("ObÃ©lix", 10);
+		Romain obelix = new Romain("Obélix", 10);
 		System.out.println(obelix.getNom());	
 		obelix.prendreParole();
 		obelix.parler("je suis un romain");
