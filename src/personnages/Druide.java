@@ -1,4 +1,4 @@
-package personnages;
+ package personnages;
 
 import java.util.Random;
 
@@ -20,7 +20,7 @@ public class Druide {
 	
 	public void preparerPotion() {
 		Random random = new Random();
-		forcePotion = random.nextnt(effetPotionMin, effetPotionMax);
+		forcePotion = random.nextInt(effetPotionMin, effetPotionMax);
 		if (forcePotion > 7) {
 			parler("J'ai réparé une super potion de force " + forcePotion);
 			
