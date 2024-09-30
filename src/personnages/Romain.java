@@ -4,18 +4,28 @@ public class Romain {
 	private String nom;
 	private int force;
 	
-	private boolean forceValide() {
-		boolean valide = true;
-		if (force < 0) {
-			valide = false;
-		}else {
-			return valide;
-		}
-	}  
 	
+	private boolean foceValide() {
+		boolean forcevalide = true;
+		if (force < 0) {
+			forcevalide = false;
+		}
+		return forcevalide;
+	}
+	
+	private boolean forcePositive() {
+		boolean forcepositive = true;
+		if (force <=0 ) {
+			forcepositive = false;
+		}
+		return forcepositive;
+	}
+	
+
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		assert foceValide();
 	}
 
 	public String getNom() {
@@ -31,7 +41,14 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		
+		assert forcePositive();
+		
+		int forcedebut = force;
 		force -= forceCoup;
+		int forcefin = force;
+		
+		assert forcedebut > forcefin;
 		if (force > 0) {
 			
 			parler("Aie");
@@ -40,14 +57,19 @@ public class Romain {
 			parler("J'andonne...");
 		}
 		
+		
+		
+		
+		
 	}
 	
 	public static void main(String[] args) {
-		Romain obelix = new Romain("Obélix", 10);
-		System.out.println(obelix.getNom());	
+		Romain obelix = new Romain("Obélix", 6);
 		obelix.prendreParole();
 		obelix.parler("je suis un romain");
-		obelix.recevoirCoup(9);
+		obelix.recevoirCoup(1);
+		
+		
 		
 	}
 	
