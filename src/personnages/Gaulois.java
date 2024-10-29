@@ -1,7 +1,5 @@
 package personnages;
 
-import java.util.Iterator;
-
 import infrastucture.Musee;
 
 public class Gaulois {
@@ -21,7 +19,7 @@ public class Gaulois {
 	}
 
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + " »") ;
+		System.out.println(prendreParole() + "<< " + texte + " >>") ;
 
 	}
 	
@@ -38,7 +36,7 @@ public class Gaulois {
 	
 	
 	public void frapper(Romain romain) {
-	    System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+	    System.out.println(nom + " envoie un grand coup dans la mï¿½choire de " + romain.getNom());
 
 	    Equipement[] trophes = romain.recevoirCoup((force / 3) * effetPotion);
 
@@ -54,10 +52,16 @@ public class Gaulois {
 	}
 	
 	public void faireUneDonnation(Musee musee) {
-		for (int i = 0, i < musee.) {
-			type type = (type) .next();
-			
+		if (nbTrophees == 0) {
+			System.out.println("Pas assez de trophe.");
+		}else {
+			this.parler("Je donne au musee tous mes trophees");
+			for (int i = 0; i < trophees.length; i++) {
+				musee.donnerTrophees(this, trophees[i]);
+				System.out.println("- "+ trophees[i]);
+			}
 		}
+		
 	}
 
 	@Override

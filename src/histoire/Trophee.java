@@ -15,11 +15,16 @@ public class Trophee {
 	}
 
 
-	public String doonerNom() {
+	public String donnerNom() {
 		return gaulois.getNom();
 	}
 	
-	
+	public static void main (String[] args){
+		Gaulois gaulois = new Gaulois("alpha", 8);
+		Trophee kk = new Trophee(gaulois, Equipement.BOUCLIER);
+		kk.donnerNom();
+		
+	}
 	
 
 }

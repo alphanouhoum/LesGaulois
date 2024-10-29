@@ -1,11 +1,10 @@
 package infrastucture;
 
-import histoire.Trophee;
 import personnages.Equipement;
 import personnages.Gaulois;
 
 public class Musee {
-	private Trophee[] trophees = new Trophee[200];
+	private Equipement[] trophees = new Equipement[200];
 	private int nbTrophee = 0;
 	
 	
